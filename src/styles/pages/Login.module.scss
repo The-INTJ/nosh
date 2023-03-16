@@ -1,0 +1,36 @@
+@import "../utility/utility.scss";
+
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.inputs {
+    display: flex;
+    justify-content: space-evenly;
+    @include layout-for($mobileBreakpoint) {
+        width: 100%;
+    }
+    @include layout-for($tabletBreakpoint) {
+        width: 70%;
+    }
+    @include layout-for($desktopBreakpoint) {
+        width: 50%;
+    }
+    input {
+        border: 0;
+        border-bottom: 1px solid $silver-lettering;
+        border-radius: 8px;
+        padding: 5px;
+        &:focus,
+        &:active {
+            @include box-shadow-hoverstate();
+        }
+    }
+}
+.buttonsContainer {
+    padding-top: 20px;
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+}

@@ -1,91 +1,58 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
+import styles from "@styles/pages/Home.module.scss";
+import Book from "@components/Book";
 
-const inter = Inter({ subsets: ['latin'] })
+import sozImage from "@public/soz.jpg";
+import oshImage from "@public/centennial.png";
+import osh12Image from "@public/osh12.jpg";
+
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+    <div className="container">
+      <div className={styles.mainDiv}>
+        <Book
+          destination="/paypal/soz"
+          image={sozImage}
+          altText="Songs of Zion hymn book"
+          title="Songs of Zion"
+          description="The newest songs written by people you know"
         />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
+        <Book
+          destination="/paypal/osh100"
+          image={oshImage}
+          altText="Centennial Edition Old School hymn book"
+          title="Centennial"
+          description="The old and gold"
+        />
+        <Book
+          destination="/paypal/osh12"
+          image={osh12Image}
+          altText="Twelth Edition Old School Hymnal"
+          title="12th Edition"
+          description="The older and gold"
+        />
+        <Book
+          destination="/paypal/soz"
+          image={sozImage}
+          altText="Songs of Zion hymn book"
+          title="Songs of Zion"
+          description="The newest songs written by people you know"
+        />
+        <Book
+          destination="/paypal/osh100"
+          image={oshImage}
+          altText="Centennial Edition Old School hymn book"
+          title="Centennial"
+          description="The old and gold"
+        />
+        <Book
+          destination="/paypal/osh12"
+          image={osh12Image}
+          altText="Twelth Edition Old School Hymnal"
+          title="12th Edition"
+          description="The older and gold"
+        />
       </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    </div>
+  );
 }

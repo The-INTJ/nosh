@@ -1,0 +1,36 @@
+@import '../utility/utility.scss';
+
+.navBar {
+  position: sticky;
+  background: $hymnal-red;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  color: $silver-lettering;
+  padding: 0 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: $default-font;
+
+  h1 {
+    flex-grow: 1;
+    white-space: nowrap;
+    margin-right: 15px;
+  }
+}
+
+#obh {
+  cursor: pointer;
+  &:hover {
+    span {
+      display: flex;
+      position: absolute;
+      top: 38%;
+      font-size: 1.5em;
+    }
+  }
+}
+

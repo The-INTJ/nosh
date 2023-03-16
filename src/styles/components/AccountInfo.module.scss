@@ -1,0 +1,7 @@
+@import "../utility/utility.scss";
+
+.accountInfoContainer {
+    button {
+        @include default-button-styles();
+    }
+}
