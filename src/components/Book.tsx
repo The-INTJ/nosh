@@ -6,7 +6,7 @@ import { BookProps } from "@interfaces";
 
 const Book = (props: BookProps) => {
   return (
-    <Link href={props.destination} className={styles.container}>
+    <Link href={props.destination} className={styles.container + (props.isLarge ? styles.large : '')}>
       <div className={styles.imageContainer}>
         <Image fill src={props.image} alt={props.altText} />
       </div>

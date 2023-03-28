@@ -13,7 +13,32 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  &.large {
+    border: none;
+    box-shadow: none;
+    padding: $default-padding;
+
+    .imageContainer {
+      display: inline-block;
+      vertical-align: middle;
+      width: 50%;
+    }
+
+    .text {
+      display: inline-block;
+      vertical-align: middle;
+      width: 50%;
+      font-size: 1.5rem;
+
+      @include layout-for(mobile) {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
 }
+
 .container:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;

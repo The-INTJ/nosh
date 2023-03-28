@@ -6,4 +6,11 @@ export type BookProps = {
     altText: string;
     title: string;
     description: string;
+    isLarge: boolean
+}
+
+export interface PageProps {
+  params: {
+    slug: string;
+  };
 }
