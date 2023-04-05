@@ -1,4 +1,4 @@
-@import "@stlyes/utility/utility.scss";
+@import "@styles/utility/utility.scss";
 
 .mainContent {
     display: flex;
@@ -24,7 +24,7 @@
         padding: 5px;
         &:focus,
         &:active {
-            @include box-shadow-hoverstate();
+            @include card-shadow();
         }
     }
 }
