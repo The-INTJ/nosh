@@ -1,3 +1,4 @@
+'use client'
 import Link from "next/link";
 import React, { useContext } from "react";
 import AccountInfo from "../../components/AccountInfo";
@@ -11,7 +12,6 @@ const Account = () => {
   }
   return (
     <div>
-      {logStuff('things')}
       <div>
         <h1>Account Information</h1>
         {username ? (

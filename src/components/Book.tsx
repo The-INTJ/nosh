@@ -3,10 +3,11 @@ import styles from "@styles/components/Book.module.scss";
 import Link from "next/dist/client/link";
 import Image from "next/image";
 import { BookProps } from "@interfaces";
+import cx from 'classnames';
 
 const Book = (props: BookProps) => {
   return (
-    <Link href={props.destination} className={styles.container + (props.isLarge ? styles.large : '')}>
+    <Link href={props.destination} className={cx(styles.container, { [styles.large]: props.isLarge })}>
       <div className={styles.imageContainer}>
         <Image fill src={props.image} alt={props.altText} />
       </div>
