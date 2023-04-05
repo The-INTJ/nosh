@@ -3,7 +3,7 @@ import styles from "../styles/foundational/Header.module.scss";
 import Link from "next/dist/client/link";
 import OptionsAccordion from "./OptionsAccordion";
 
-const Header = (props) => {
+const Header = () => {
   return (
     <div className={styles.navBar}>
       <Link href="/">
