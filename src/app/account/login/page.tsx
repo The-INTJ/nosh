@@ -1,28 +1,32 @@
-'use client'
+"use client";
 
-import React, { useState, FormEvent } from 'react';
-import { signIn } from '@lib/helpers';
-import styles from '@styles/pages/Login.module.scss';
+import React, { useState, FormEvent } from "react";
+import { signIn } from "@lib/helpers";
+import styles from "@styles/pages/Login.module.scss";
+import { useRouter, } from "next/navigation";
+import { AppRouterInstance } from "next/dist/shared/lib/app-router-context";
+
+const handleSubmit = async (e: FormEvent, email: string, password: string, router: AppRouterInstance) => {
+  e.preventDefault();
+  const result = await signIn(email, password);
+
+  if (result.success) {
+    router.replace("/account");
+  } else {
+    console.log("Error");
+  }
+};
 
 const LoginPage: React.FC = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-    const result = await signIn(email, password);
-
-    if (!result.success) {
-      
-    }
-  };
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const router = useRouter();
 
   return (
     <div className={styles.container}>
-      <form className={styles.form} onSubmit={handleSubmit}>
+      <form className={styles.form} onSubmit={(e) => handleSubmit(e, email, password, router)}>
         <h1 className={styles.title}>Login</h1>
-        {error && <p className={styles.error}>{error}</p>}
         <input
           type="email"
           className={styles.input}

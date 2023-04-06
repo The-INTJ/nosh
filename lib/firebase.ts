@@ -1,5 +1,5 @@
 import { initializeApp, getApp } from "firebase/app";
-import { EmailAuthProvider, getAuth, GoogleAuthProvider } from "firebase/auth";
+import { EmailAuthProvider, getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 

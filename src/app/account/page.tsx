@@ -6,10 +6,6 @@ import { UserContext } from "@lib/context";
 
 const Account = () => {
   const { user, username } = useContext(UserContext);
-  function logStuff(stuffToLog: string | Object) {
-    console.log(stuffToLog);
-    return null;
-  }
   return (
     <div>
       <div>

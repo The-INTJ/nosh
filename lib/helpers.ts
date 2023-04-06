@@ -1,9 +1,5 @@
-import { auth, firestore } from './firebase';
-import { useEffect, useState } from 'react';
-import { doc, collection } from 'firebase/firestore';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-
-
+import { auth } from './firebase';
+import { signInWithEmailAndPassword, signOut } from 'firebase/auth';
 
 export const signIn = async (email: string, password: string) => {
   try {
@@ -13,3 +9,7 @@ export const signIn = async (email: string, password: string) => {
     return { success: false, error };
   }
 };
+
+export const logout = async () => {
+  signOut(auth);
+}
