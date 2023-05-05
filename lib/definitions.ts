@@ -6,11 +6,17 @@ export type BookProps = {
     altText: string;
     title: string;
     description: string;
-    isLarge: boolean
+    isLarge: boolean,
+    price?: number;
 }
 
 export interface PageProps {
   params: {
     slug: string;
   };
+}
+
+export type PayPalWrapperProps = {
+  price: number;
+  book: string;
 }

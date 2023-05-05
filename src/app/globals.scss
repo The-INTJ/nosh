@@ -1,3 +1,5 @@
+@import "@styles/utility/utility.scss";
+
 html,
 body {
   padding: 0;
@@ -10,6 +12,10 @@ main {
   padding: 50px;
 }
 
+.main {
+  padding: $default-padding;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -17,4 +23,8 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+button {
+  @include default-button-styles();
 }

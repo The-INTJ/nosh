@@ -1,6 +1,6 @@
-'use client'
+"use client";
 import Header from "@components/Header";
-import "./globals.css";
+import "./globals.scss";
 import { UserContext } from "@lib/context";
 import { useUserData } from "@lib/hooks";
 
@@ -19,7 +19,7 @@ export default function RootLayout({
       <html lang="en">
         <body>
           <Header />
-          {children}
+          <div className="main">{children}</div>
         </body>
       </html>
     </UserContext.Provider>
