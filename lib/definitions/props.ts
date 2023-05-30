@@ -1,3 +1,4 @@
+import { User } from "firebase/auth";
 import { StaticImageData } from "next/image";
 
 export type BookProps = {
@@ -19,4 +20,5 @@ export interface PageProps {
 export type PayPalWrapperProps = {
   price: number;
   book: string;
+  user: User | null | undefined;
 }

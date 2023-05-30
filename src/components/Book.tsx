@@ -2,7 +2,7 @@ import React from "react";
 import styles from "@styles/components/Book.module.scss";
 import Link from "next/dist/client/link";
 import Image from "next/image";
-import { BookProps } from "@interfaces";
+import { BookProps } from "@lib/definitions/props";
 import LargeBook from "./LargeBook";
 
 const Book = (props: BookProps) => {

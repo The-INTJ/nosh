@@ -3,9 +3,10 @@ import {
   PayPalButtons,
   FUNDING,
 } from "@paypal/react-paypal-js";
-import { PayPalWrapperProps } from "@lib/definitions";
+import { PayPalWrapperProps } from "@lib/definitions/props";
 import { convertPriceToString } from "@lib/helpers";
 import styles from "@styles/components/PayPalButtonsWrapper.module.scss";
+import { unlockSelectedHymnal } from "@lib/firebase-functions";
 
 const PayPalButtonsWrapper = (props: PayPalWrapperProps) => {
   const clientID = process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID || "";
@@ -48,6 +49,8 @@ const PayPalButtonsWrapper = (props: PayPalWrapperProps) => {
 
   const onApprove = (data: any, actions: any) => {
     return actions.order.capture().then(function (details: any) {
+      console.log(props.book, props.user);
+      unlockSelectedHymnal(props.book, props.user);
       alert("Transaction completed by " + details.payer.name.given_name + ".");
     });
   };
