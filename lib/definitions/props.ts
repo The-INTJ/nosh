@@ -22,3 +22,7 @@ export type PayPalWrapperProps = {
   book: string;
   user: User | null | undefined;
 }
+
+export type GenericAuthProps = {
+  user: User | null | undefined;
+}

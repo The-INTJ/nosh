@@ -6,3 +6,7 @@ export const hymnalNames: string[] = [
     "Worship The King",
     "Primitive Baptist Hymnal"
 ]
+
+export interface HymnalAccessData {
+    [hymnalName: string]: boolean;
+  }
