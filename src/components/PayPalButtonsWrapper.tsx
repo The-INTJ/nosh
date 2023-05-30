@@ -11,6 +11,11 @@ import { unlockSelectedHymnal } from "@lib/firebase-functions";
 const PayPalButtonsWrapper = (props: PayPalWrapperProps) => {
   const clientID = process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID || "";
 
+  if (!clientID) {
+    console.error("PayPal client ID not found");
+    return null;
+  }
+
   const createOrder = (data: any, actions: any) => {
     return actions.order
       .create({
@@ -31,21 +36,6 @@ const PayPalButtonsWrapper = (props: PayPalWrapperProps) => {
         return orderID;
       });
   };
-
-  /*     const onApprove = (data: any, actions: any) => {
-    // setLoading('Finishing transaction ...');
-
-    actions.order.get().then((orderDetails: any) => {
-      // ORDER IS APPROVED BUT NOT COMPLETED YET
-      // console.log({ orderDetails });
-
-      actions.order.capture().then((data: any) => {
-        // ORDER IS COMPLETED, MONEY SENT
-        // setOrderDetails({ data });
-        // setLoading(null);
-      });
-    });
-  }; */
 
   const onApprove = (data: any, actions: any) => {
     return actions.order.capture().then(function (details: any) {
