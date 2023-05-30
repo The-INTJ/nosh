@@ -10,6 +10,7 @@ const bookData = [
     altText: "Songs of Zion hymn book",
     title: "Songs of Zion",
     description: "The newest songs written by people you know",
+    price: 10
   },
   {
     id: "osh",
@@ -18,6 +19,7 @@ const bookData = [
     altText: "Centennial Edition Old School hymn book",
     title: "Centennial",
     description: "The old and gold",
+    price: 10
   },
   {
     id: "osh12",
@@ -26,6 +28,7 @@ const bookData = [
     altText: "Twelth Edition Old School Hymnal",
     title: "12th Edition",
     description: "The older and gold",
+    price: 10
   },
 ];
 

@@ -14,47 +14,6 @@
   flex-direction: column;
   align-items: center;
 
-  &.large {
-    border: none;
-    box-shadow: none;
-    padding: $default-padding;
-    display: grid;
-    justify-items: center;
-    grid-template-columns: 2fr 3fr;
-    grid-template-rows: 1fr;
-    @include layout-for(mobile) {
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr;
-    }
-    width: 100%;
-
-    .imageContainer {
-      display: flex;
-      justify-content: center;
-      min-height: 100%;
-    }
-
-    .description {
-      border: none;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      font-size: 1.5rem;
-
-      @include layout-for(mobile) {
-        display: block;
-        width: 100%;
-      }
-    }
-
-    &:hover {
-      cursor: default;
-      box-shadow: none;
-    }
-  }
-
-
 }
 
 .imageContainer {

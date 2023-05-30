@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Link from "next/link";
 import React, { useContext } from "react";
 import AccountInfo from "../../components/AccountInfo";
@@ -9,13 +9,15 @@ const Account = () => {
   return (
     <div>
       <div>
-        <h1>Account Information</h1>
         {username ? (
-          <AccountInfo />
+          <div>
+            <h1>Account Information</h1>
+            <AccountInfo />
+          </div>
         ) : (
-          <Link href="/account/login">
-            <h3>Login</h3>
-          </Link>
+            <Link href="/account/login">
+              <h3>Login</h3>
+            </Link>
         )}
       </div>
     </div>

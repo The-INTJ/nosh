@@ -1,0 +1,61 @@
+@import "@styles/utility/utility.scss";
+
+.container {
+  display: grid;
+  place-items: center;
+  justify-content: center;
+  align-items: center;
+
+  @include card-shadow();
+  transition: 0.3s;
+  padding: 15px;
+  border-radius: $border-radius-default;
+  margin: 25px;
+  border: none;
+  box-shadow: none;
+  padding: $default-padding;
+
+  .imageContainer {
+    display: flex;
+    justify-content: center;
+    min-height: 100%;
+
+    img {
+      object-fit: contain;
+    }
+  }
+
+  .description {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    font-size: 1.5rem;
+  }
+
+  &:hover {
+    cursor: default;
+    box-shadow: none;
+  }
+
+
+
+}
+
+.imageContainer {
+  width: 270px;
+  height: 325px;
+  position: relative;
+
+  img {
+    object-fit: cover;
+    padding: 10px;
+  }
+}
+
+.description {
+  border-top: 1px solid $silver-lettering;
+  margin-top: 20px;
+  width: 100%;
+}

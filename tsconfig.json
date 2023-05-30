@@ -26,8 +26,9 @@
       "@components/*": ["./src/components/*"],
       "@styles/*": ["./src/styles/*"],
       "@public/*": ["./public/*"],
-      "@interfaces": ["./lib/definitions.ts"],
-      "@tst/*": ["./tst/*"]
+      "@interfaces": ["lib/definitions/props.ts"],
+      "@tst/*": ["./tst/*"],
+      "@definitions/*": ["./lib/definitions/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

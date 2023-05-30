@@ -1,29 +1,43 @@
-'use client'
+"use client";
 import bookData from "@tst/data/BookData";
 import Book from "@/components/Book";
-import { PageProps } from "@lib/definitions";
+import { PageProps } from "@lib/definitions/props";
+import { convertPriceToString } from "@lib/helpers";
+import styles from "@styles/pages/BookPage.module.scss";
+import { UserContext } from "@lib/context";
+import { useContext } from "react";
+
+import { useState, useEffect } from "react";
+import PayPalButtonsWrapper from "@/components/PayPalButtonsWrapper";
 
 const BookPage: React.FC<PageProps> = ({ params }) => {
   const { slug } = params;
-
   const book = bookData.find((book) => book.id === slug);
+  const [mounted, setMounted] = useState(false);
+  const { user, username } = useContext(UserContext);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   if (!book) {
     return <div>Book not found</div>;
   }
 
   return (
-    <div>
-       <Book
-            destination={book.destination}
-            image={book.image}
-            altText={book.altText}
-            title={book.title}
-            description={book.description}
-            isLarge={true}
-          />
+    <div className={styles.container}>
+      <Book
+        destination={null}
+        image={book.image}
+        altText={book.altText}
+        title={book.title}
+        description={book.description}
+        isLarge={true}
+        price={book.price}
+      />
+      {mounted && <PayPalButtonsWrapper price={book.price} book={book.title} user={user} />}
     </div>
   );
-}
+};
 
 export default BookPage;
