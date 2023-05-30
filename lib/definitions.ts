@@ -1,7 +1,7 @@
 import { StaticImageData } from "next/image";
 
 export type BookProps = {
-    destination: string;
+    destination: string | null;
     image: StaticImageData;
     altText: string;
     title: string;
