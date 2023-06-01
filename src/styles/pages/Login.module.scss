@@ -1,36 +1,86 @@
 @import "@styles/utility/utility.scss";
 
-.mainContent {
+.container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-}
-.inputs {
-    display: flex;
-    justify-content: space-evenly;
-    @include layout-for($mobileBreakpoint) {
+    height: 100vh;
+    background-color: $neutral-background;
+    font-family: $default-font-family;
+
+    @include layout-for(mobile) {
+        padding: $small-padding;
+    }
+
+
+    .form {
+        display: flex;
+        flex-direction: column;
         width: 100%;
-    }
-    @include layout-for($tabletBreakpoint) {
-        width: 70%;
-    }
-    @include layout-for($desktopBreakpoint) {
-        width: 50%;
-    }
-    input {
-        border: 0;
-        border-bottom: 1px solid $silver-lettering;
-        border-radius: 8px;
-        padding: 5px;
-        &:focus,
-        &:active {
-            @include card-shadow();
+        max-width: 400px;
+        background-color: $white;
+        padding: $medium-padding;
+        border-radius: $border-radius;
+        box-shadow: $default-box-shadow;
+
+        @include layout-for(mobile) {
+            padding: $small-padding;
         }
     }
-}
-.buttonsContainer {
-    padding-top: 20px;
-    width: 30%;
-    display: flex;
-    justify-content: space-around;
+
+    .title {
+        margin-bottom: $medium-margin;
+        text-align: center;
+        color: $default-text-color;
+    }
+
+    .input {
+        margin-bottom: $small-margin;
+        padding: $small-padding;
+        border-radius: $border-radius;
+        border: $default-border;
+        font-size: $default-font-size;
+    }
+
+    .submitButton {
+        padding: $small-padding;
+        background-color: $primary-color;
+        color: $white;
+        font-size: $default-font-size;
+        border: none;
+        border-radius: $border-radius;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: darken($primary-color, 10%);
+        }
+    }
+
+    .error {
+        color: $error-color;
+        margin-top: $small-margin;
+    }
+
+    p {
+        margin-top: $medium-margin;
+        color: $default-text-color;
+        font-size: $default-font-size;
+
+        a {
+            font-weight: bold;
+            color: $primary-color;
+            text-decoration: none;
+            transition: color 0.3s;
+
+            &:hover {
+                color: darken($primary-color, 10%);
+            }
+        }
+
+        @include layout-for(mobile) {
+            font-size: $mobile-font-size;
+        }
+    }
 }
