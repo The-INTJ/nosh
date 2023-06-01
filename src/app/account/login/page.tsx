@@ -47,7 +47,7 @@ const LoginPage: React.FC = () => {
         </button>
       </form>
       {error && <p className={styles.error}>Invalid email or password</p>}
-      <p>Don't have an account?</p>
+      <p>No account?</p>
       <Link href="/account/create"><b>Create One</b></Link>
     </div>
   );

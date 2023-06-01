@@ -9,7 +9,7 @@ const AccountAuth = () => {
         login
       </Link>
       </h1>
-      <p>Don't have an account?</p>
+      <p>No account?</p>
       <Link href="/account/create">
         Create one
       </Link>
