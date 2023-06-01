@@ -15,22 +15,12 @@
 
   font-family: $default-font;
 
-  h1 {
+  #obh {
     flex-grow: 1;
     white-space: nowrap;
     margin-right: 15px;
-  }
-}
-
-#obh {
-  cursor: pointer;
-  &:hover {
-    span {
-      display: flex;
-      position: absolute;
-      top: 38%;
-      font-size: 1.5em;
-    }
+    font-size: $font-size-extra-large;
+    font-weight: $font-weight-bold;
   }
 }
 
