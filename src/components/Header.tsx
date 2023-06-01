@@ -8,7 +8,7 @@ const Header = () => {
     <div className={styles.navBar}>
       <Link href="/">
         <div className={styles.h1ToolTip}>
-          <h1 id={styles.obh}>Old Baptist Hymnals</h1>
+          <p id={styles.obh}>Old Baptist Hymnals</p>
         </div>
       </Link>
       <OptionsAccordion

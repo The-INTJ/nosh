@@ -3,6 +3,7 @@ import Link from "next/link";
 import React, { useContext } from "react";
 import AccountInfo from "../../components/AccountInfo";
 import { UserContext } from "@lib/context";
+import AccountAuth from "@/components/AccountAuth";
 
 const Account = () => {
   const { user, username } = useContext(UserContext);
@@ -15,9 +16,7 @@ const Account = () => {
             <AccountInfo />
           </div>
         ) : (
-            <Link href="/account/login">
-              <h3>Login</h3>
-            </Link>
+          <AccountAuth />
         )}
       </div>
     </div>

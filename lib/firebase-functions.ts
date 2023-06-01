@@ -2,7 +2,29 @@ import { getDocs, collection, doc, getDoc, setDoc, DocumentData } from 'firebase
 import { auth, firestore } from './firebase';
 import { BookProps } from '@definitions/props';
 import { hymnalNames, HymnalAccessData } from '@definitions/data';
-import { User } from 'firebase/auth';
+import { User, signInWithEmailAndPassword, signOut, createUserWithEmailAndPassword } from 'firebase/auth';
+
+export const signIn = async (email: string, password: string) => {
+    try {
+        await signInWithEmailAndPassword(auth, email, password);
+        return { success: true };
+    } catch (error) {
+        return { success: false, error };
+    }
+};
+
+export const logout = async () => {
+    signOut(auth);
+}
+
+export const createUser = async (email: string, password: string) => {
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      return { success: true, user: userCredential.user };
+    } catch (error) {
+      return { success: false, error };
+    }
+  };
 
 export async function unlockSelectedHymnal(bookTitle: string, user: User | null | undefined,) {
     /* aquire user id */
