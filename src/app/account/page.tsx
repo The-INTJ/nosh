@@ -7,10 +7,11 @@ import AccountAuth from "@/components/AccountAuth";
 
 const Account = () => {
   const { user, username } = useContext(UserContext);
+  console.log(user)
   return (
     <div>
       <div>
-        {username ? (
+        {user ? (
           <div>
             <h1>Account Information</h1>
             <AccountInfo />

@@ -2,23 +2,31 @@
 import bookData from "@tst/data/BookData";
 import Book from "@/components/Book";
 import { PageProps } from "@lib/definitions/props";
-import { convertPriceToString } from "@lib/helpers";
 import styles from "@styles/pages/BookPage.module.scss";
 import { UserContext } from "@lib/context";
 import { useContext } from "react";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import PayPalButtonsWrapper from "@/components/PayPalButtonsWrapper";
+import Loading from "@/components/Loading";
 
 const BookPage: React.FC<PageProps> = ({ params }) => {
   const { slug } = params;
   const book = bookData.find((book) => book.id === slug);
   const [mounted, setMounted] = useState(false);
   const { user, username } = useContext(UserContext);
+  const router = useRouter();
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  // Check if the user is null, use react router to redirect to the login page
+  if (!user) {
+    router.replace("/account/login?redirect=" + book?.id);
+    return <Loading />;
+  }
 
   if (!book) {
     return <div>Book not found</div>;

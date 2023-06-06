@@ -41,6 +41,7 @@
         border-radius: $border-radius;
         border: $default-border;
         font-size: $default-font-size;
+        width: 100%;
     }
 
     .submitButton {
@@ -83,4 +84,27 @@
             font-size: $mobile-font-size;
         }
     }
+
+    // Show / hide
+
+    .inputShowPassword {
+        display: flex;
+        position: relative;
+      }
+      
+      .togglePassword {
+        position: absolute;
+        right: 0;
+        border: none;
+        background-color: transparent;
+        color: #000;
+        cursor: pointer;
+        padding: 5px;
+        margin: 5px;
+      
+        &:hover {
+          color: $hymnal-red; // change color on hover
+        }
+      }
+      
 }
