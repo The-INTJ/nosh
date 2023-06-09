@@ -1,0 +1,80 @@
+@import "@styles/utility/utility.scss";
+
+.feedbackContainer {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+.feedbackButton {
+    position: sticky;
+    bottom: 16px;
+}
+
+#dialogSelect {
+    border: none;
+    border-radius: $border-radius-default;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: $default-padding;
+}
+
+.label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.input,
+.textarea {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    width: 100%;
+    box-sizing: border-box;
+
+    &:focus {
+        outline: none;
+        border-color: #9ecaed;
+        box-shadow: 0 0 10px #9ecaed;
+    }
+}
+
+.textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.submitButton {
+    cursor: pointer;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: $hymnal-red;
+    border-radius: 3px;
+    border: none;
+
+    &:hover {
+        background-color: $hymnal-red-hover;
+    }
+}
+
+.cancelButton {
+    cursor: pointer;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #dc3545;
+    border-radius: 3px;
+    border: none;
+    margin-top: 10px;
+
+    &:hover {
+        background-color: #c82333;
+    }
+}

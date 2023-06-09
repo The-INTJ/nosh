@@ -3,6 +3,7 @@ import Header from "@components/Header";
 import "./globals.scss";
 import { UserContext } from "@lib/context";
 import { useUserData } from "@lib/hooks";
+import Feedback from "@/components/Feedback";
 
 export default function RootLayout({
   children,
@@ -14,7 +15,9 @@ export default function RootLayout({
       <html lang="en">
         <body>
           <Header />
-          <div className="main">{children}</div>
+          <div className="main">
+            {children}
+            <Feedback /></div>
         </body>
       </html>
     </UserContext.Provider>
