@@ -9,6 +9,10 @@
 .feedbackButton {
     position: sticky;
     bottom: 16px;
+
+    button {
+        background-color: $grey;
+    }
 }
 
 #dialogSelect {
@@ -52,7 +56,7 @@
     min-height: 100px;
 }
 
-.submitButton {
+button.submitButton {
     cursor: pointer;
     padding: 10px 20px;
     color: #fff;
@@ -65,7 +69,7 @@
     }
 }
 
-.cancelButton {
+button.cancelButton {
     cursor: pointer;
     padding: 10px 20px;
     color: #fff;

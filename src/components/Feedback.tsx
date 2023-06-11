@@ -5,17 +5,33 @@ const Feedback = () => {
     const [name, setName] = useState('');
     const [contactInfo, setContactInfo] = useState('');
     const [feedback, setFeedback] = useState('');
+    const [subject, setSubjectInfo] = useState('');
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
-        // TODO: Replace <HANDLE_SUBMIT> with your actual backend handling function
-        //await <HANDLE_SUBMIT>({ name, contactInfo, feedback });
+        const message = {
+            name,
+            contactInfo,
+            subject,
+            feedback
+        };
+
+        const response = await fetch('/api/email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(message)
+        });
 
         // Reset the form
         setName('');
         setContactInfo('');
+        setSubjectInfo('');
         setFeedback('');
+
+        closeModal();
     };
 
     const openModal = () => {
@@ -31,7 +47,7 @@ const Feedback = () => {
 
     return (
         <div className={styles.feedbackButton}>
-            <button onClick={() => openModal()}>Feedback</button>
+            <button type="button" onClick={() => openModal()}>Feedback</button>
             <dialog className={styles.feedbackDialogue} id={styles.dialogSelect}>
                 <form onSubmit={handleSubmit} className={styles.form}>
                     <label className={styles.label}>
@@ -54,6 +70,15 @@ const Feedback = () => {
                         />
                     </label>
                     <label className={styles.label}>
+                        Subject:
+                        <input
+                            type="text"
+                            value={subject}
+                            onChange={(e) => setSubjectInfo(e.target.value)}
+                            className={styles.input}
+                        />
+                    </label>
+                    <label className={styles.label}>
                         Feedback:
                         <textarea
                             value={feedback}
@@ -62,9 +87,9 @@ const Feedback = () => {
                             className={styles.textarea}
                         />
                     </label>
-                    <input type="submit" value="Submit" className={styles.submitButton} />
+                    <button type="submit" className={styles.submitButton}>Submit</button>
                 </form>
-                <button onClick={() => closeModal()} className={styles.cancelButton}>Cancel</button>
+                <button type="button" onClick={() => closeModal()} className={styles.cancelButton}>Cancel</button>
             </dialog>
         </div>
     );
