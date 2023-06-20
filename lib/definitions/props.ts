@@ -11,10 +11,13 @@ export type BookProps = {
     price?: number;
 }
 
-export interface PageProps {
+export interface BookPageProps {
   params: {
     slug: string;
   };
+}
+
+export interface ChatPageProps {
 }
 
 export type PayPalWrapperProps = {

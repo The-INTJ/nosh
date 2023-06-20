@@ -28,7 +28,9 @@
       "@public/*": ["./public/*"],
       "@interfaces": ["lib/definitions/props.ts"],
       "@tst/*": ["./tst/*"],
-      "@definitions/*": ["./lib/definitions/*"]
+      "@definitions/*": ["./lib/definitions/*"],
+      "@AIlib": ["./ailib/*"],
+      "@AIcomponents/*": ["./src/components/chat/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

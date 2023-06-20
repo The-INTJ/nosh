@@ -15,6 +15,7 @@ const Header = () => {
         options={[
           ["/about", "About"],
           ["/account", "Account"],
+          ["/chat", "Chat"]
         ]}
       />
     </div>

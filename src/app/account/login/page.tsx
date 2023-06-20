@@ -23,7 +23,7 @@ const LoginPage: React.FC = () => {
       console.log("Success")
       const redirectUrl = searchParams.get("redirect");
       if (redirectUrl) {
-        router.push("/book/" + redirectUrl);
+        router.push(redirectUrl);
       } else {
         router.push("/account");
       }
